@@ -343,7 +343,17 @@ function Pesquisa() {
         <Block title="Orientações de TCC" items={orientacoes} icon={GraduationCap} />
       </div>
 
-      <div className="mt-10 grid md:grid-cols-3 gap-6">
+      <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
+          className="rounded-2xl p-7 text-[color:var(--primary-foreground)]" style={{ background: "var(--gradient-hero)" }}>
+          <div className="text-xs uppercase tracking-[0.25em] text-[color:var(--gold-soft)]">Liga Acadêmica</div>
+          <h4 className="text-lg font-medium mt-2">LICODE — Ladies in Code</h4>
+          <p className="text-sm text-white/80 mt-3">2025 — Atual · Coordenadora na UNIT. Projeto de inclusão de mulheres na computação: palestras, minicursos, mentorias e cursos introdutórios de programação para meninas do ensino médio.</p>
+          <a href="https://meninas.sbc.org.br/projetos-parceiros/licode/" target="_blank" rel="noreferrer"
+            className="inline-flex items-center gap-1 mt-3 text-xs text-[color:var(--gold-soft)] hover:underline">
+            Saiba mais <ArrowUpRight className="w-3 h-3" />
+          </a>
+        </motion.div>
         <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
           className="rounded-2xl p-7 text-[color:var(--primary-foreground)]" style={{ background: "var(--gradient-hero)" }}>
           <div className="text-xs uppercase tracking-[0.25em] text-[color:var(--gold-soft)]">Projeto de Extensão</div>
