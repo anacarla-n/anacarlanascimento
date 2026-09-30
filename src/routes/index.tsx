@@ -6,7 +6,7 @@ import {
   ArrowUpRight, Sparkles, FileText,
 } from "lucide-react";
 //import portraitAsset from "@/assets/ana-portrait.jpg.asset.json";
-import portraitAsset from "/ANA00004.jpg";
+import portraitAsset from "@/ANA00004.jpg";
 
 const portrait = portraitAsset.url;
 
