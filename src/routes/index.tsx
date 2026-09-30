@@ -5,7 +5,9 @@ import {
   Award, Users, Code2, Palette, Shield, Workflow, Building2, Calendar,
   ArrowUpRight, Sparkles, FileText,
 } from "lucide-react";
-import portraitAsset from "@/assets/ana-portrait.jpg.asset.json";
+//import portraitAsset from "@/assets/ana-portrait.jpg.asset.json";
+import portraitAsset from "/ANA00004.jpg";
+
 const portrait = portraitAsset.url;
 
 export const Route = createFileRoute("/")({
