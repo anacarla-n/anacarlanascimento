@@ -5,10 +5,9 @@ import {
   Award, Users, Code2, Palette, Shield, Workflow, Building2, Calendar,
   ArrowUpRight, Sparkles, FileText,
 } from "lucide-react";
-//import portraitAsset from "@/assets/ana-portrait.jpg.asset.json";
 import portraitAsset from "/ANA00004.jpg"; 
 
-const portrait = portraitAsset.url;
+const portrait = portraitAsset;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -133,7 +132,7 @@ function Hero() {
         >
           <div className="absolute -inset-4 rounded-[2rem] border border-[color:var(--gold)]/40" aria-hidden />
           <div className="relative rounded-[1.75rem] overflow-hidden shadow-[var(--shadow-elegant)]">          
-              <img src={/ANA00004.jpg} alt="Retrato profissional de Ana Carla do Nascimento Santos"
+              <img src={portrait} alt="Retrato profissional de Ana Carla do Nascimento Santos"
               width={768} height={960} className="w-full h-auto object-cover" />
             <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-[color:var(--navy-deep)]/80 to-transparent text-[color:var(--primary-foreground)]">
               <div className="text-xs uppercase tracking-[0.25em] text-[color:var(--gold-soft)]">Sergipe · Brasil</div>
