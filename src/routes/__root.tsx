@@ -72,7 +72,8 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
-const themeScript = `(function(){try{var t=localStorage.getItem("theme");var d=t?t==="dark":matchMedia("(prefers-color-scheme: dark)").matches;var r=document.documentElement;r.classList.toggle("dark",d);r.style.colorScheme=d?"dark":"light"}catch(e){}})();`;
+// Dark is the default regardless of the browser/OS preference; light only if the visitor picked it.
+const themeScript = `(function(){try{var d=localStorage.getItem("theme")!=="light";var r=document.documentElement;r.classList.toggle("dark",d);r.style.colorScheme=d?"dark":"light"}catch(e){}})();`;
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
@@ -86,8 +87,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Portfólio de Ana Carla do Nascimento Santos — docente, pesquisadora e analista de sistemas em Engenharia de Software, UX/UI e IHC.",
       },
       { name: "author", content: "Ana Carla do Nascimento Santos" },
-      { name: "theme-color", content: "#f8f6ef", media: "(prefers-color-scheme: light)" },
-      { name: "theme-color", content: "#0d1612", media: "(prefers-color-scheme: dark)" },
+      { name: "theme-color", content: "#0d1612" },
       { property: "og:locale", content: "pt_BR" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
@@ -105,7 +105,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap",
       },
     ],
-    // Applies the saved (or system) theme before first paint to avoid a light/dark flash.
+    // Applies the saved theme before first paint to avoid a light/dark flash.
     scripts: [{ children: themeScript }],
   }),
   shellComponent: RootShell,
@@ -116,7 +116,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="pt-BR" suppressHydrationWarning>
+    <html lang="pt-BR" className="dark" style={{ colorScheme: "dark" }} suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>
